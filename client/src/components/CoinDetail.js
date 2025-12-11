@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../api/axios';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 const CoinDetail = () => {
@@ -25,7 +25,7 @@ const CoinDetail = () => {
 
   useEffect(() => {
     
-    axios.get(`https://crypto-project-damir-20211903.onrender.com/api/coins/${id}/history`)
+    axios.get(`/coins/${id}/history`)
       .then(res => {
         const formattedData = res.data.map(item => ({
           

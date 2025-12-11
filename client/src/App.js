@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from './api/axios';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import CoinCard from './components/CoinCard';
@@ -10,7 +10,7 @@ function Home() {
   const [coins, setCoins] = useState([]);
 
   useEffect(() => {
-    axios.get('https://crypto-project-damir-20211903.onrender.com/api/coins')
+    axios.get('/coins')
       .then(response => setCoins(response.data))
       .catch(error => console.error(error));
   }, []);
