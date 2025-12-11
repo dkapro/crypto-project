@@ -46,7 +46,7 @@ app.get('/api/coins', async (req, res) => {
       'https://api.coingecko.com/api/v3/coins/markets', 
       { 
         headers: {
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+          'x-cg-demo-api-key': 'CG-frC8PGqKcXPSjk2qDZTpiPjq'
         },
         params: { vs_currency: 'usd', order: 'market_cap_desc', per_page: 10, page: 1, sparkline: false } 
       }
@@ -75,7 +75,7 @@ app.get('/api/coins/:id/history', async (req, res) => {
       `https://api.coingecko.com/api/v3/coins/${id}/market_chart`,
       { 
         headers: {
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+          'x-cg-demo-api-key': 'CG-frC8PGqKcXPSjk2qDZTpiPjq'
         },
         params: { vs_currency: 'usd', days: days } 
       }
