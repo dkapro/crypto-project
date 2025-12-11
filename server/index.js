@@ -80,6 +80,9 @@ app.get('/api/coins/:id/history', async (req, res) => {
         params: { vs_currency: 'usd', days: days } 
       }
     );
+    historyCache[cacheKey] = response.data.prices; 
+    historyTimestamps[cacheKey] = now;            
+    res.json(response.data.prices);
   } catch (error) {
     if (historyCache[cacheKey]) return res.json(historyCache[cacheKey]);
     res.json(generateBackupHistory());
