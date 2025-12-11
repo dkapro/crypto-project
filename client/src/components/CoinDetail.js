@@ -25,7 +25,7 @@ const CoinDetail = () => {
 
   useEffect(() => {
     
-    axios.get(`http://localhost:5000/api/coins/${id}/history`)
+    axios.get(`https://crypto-project-damir-20211903.onrender.com/api/coins/${id}/history`)
       .then(res => {
         const formattedData = res.data.map(item => ({
           

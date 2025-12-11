@@ -5,7 +5,7 @@ const FearGreed = () => {
   const [fng, setFng] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/fng')
+    axios.get('https://crypto-project-damir-20211903.onrender.com/api/fng')
       .then(res => {
         setFng(res.data.data[0]);
       })

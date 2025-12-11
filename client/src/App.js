@@ -10,7 +10,7 @@ function Home() {
   const [coins, setCoins] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/coins')
+    axios.get('https://crypto-project-damir-20211903.onrender.com/api/coins')
       .then(response => setCoins(response.data))
       .catch(error => console.error(error));
   }, []);
